@@ -1,0 +1,45 @@
+# application.yml
+
+spring:
+  profiles:
+    active: node1  # default profile
+
+---
+spring:
+  config:
+    activate:
+      on-profile: node1
+server:
+  port: 8081
+  application:
+    name: Node-1
+
+---
+spring:
+  config:
+    activate:
+      on-profile: node2
+server:
+  port: 8082
+  application:
+    name: Node-2
+
+---
+spring:
+  config:
+    activate:
+      on-profile: node3
+server:
+  port: 8083
+  application:
+    name: Node-3
+
+---
+spring:
+  config:
+    activate:
+      on-profile: node4
+server:
+  port: 8084
+  application:
+    name: Node-4
