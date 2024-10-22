@@ -23,15 +23,15 @@ public class NodeController {
         this.nodes = new ArrayList<>();
 
         // Create and add nodes with assigned ranges
-        Node node1 = new Node("Node-1", 0, 24);
-        Node node2 = new Node("Node-2", 25, 49);
-        Node node3 = new Node("Node-3", 50, 74);
-        Node node4 = new Node("Node-4", 75, 99);
+        Node node1 = new Node("Node-1", 0, 29);
+        Node node2 = new Node("Node-2", 30, 59);
+        Node node3 = new Node("Node-3", 60, 79);
+        Node node4 = new Node("Node-4", 80, 99);
 
-        consistentHashing.addNode(node1);
-        consistentHashing.addNode(node2);
-        consistentHashing.addNode(node3);
-        consistentHashing.addNode(node4);
+        consistentHashing.initializeNode(node1);
+        consistentHashing.initializeNode(node2);
+        consistentHashing.initializeNode(node3);
+        consistentHashing.initializeNode(node4);
 
         nodes.add(node1);
         nodes.add(node2);
@@ -39,20 +39,28 @@ public class NodeController {
         nodes.add(node4);
     }
 
-    @PostMapping("/addNode")
+    @PostMapping("/addKeyValuePair")
     @ResponseStatus(HttpStatus.CREATED)
-    public KeyValuePair addNode (@RequestBody KeyValuePair keyValuePair) {
+    public KeyValuePair addKeyValuePair (@RequestBody KeyValuePair keyValuePair) {
         System.out.println("addNode called with key: " + keyValuePair.getKey());
         Node node = consistentHashing.getNode(keyValuePair.getKey());
         node.putKeyValue(keyValuePair.getKey(), keyValuePair.getValue());
         return keyValuePair;
     }
 
-    @GetMapping("/getNode")
+    @GetMapping("/getKey")
     public String getKeyValue (@RequestParam String key) {
         Node node = consistentHashing.getNode(key); // Retrieve the node responsible for the key
         String value = node.getValue(key);
         return value != null ? "Key: " + key + " found in " + node.getNodeId() + " with value: " + value : "Key not found!";
+    }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping("/addNewNode")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Node addNewNode (@RequestBody Node newNode) {
+        consistentHashing.addNode(newNode);
+        return newNode;
     }
 }
 

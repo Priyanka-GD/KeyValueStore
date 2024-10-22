@@ -15,6 +15,14 @@ public class Node {
         this.keyValueStore = new HashMap<>();
     }
 
+    public void setRangeEnd (int rangeEnd) {
+        this.rangeEnd = rangeEnd;
+    }
+
+    public void setRangeStart (int rangeStart) {
+        this.rangeStart = rangeStart;
+    }
+
     public String getNodeId () {
         return nodeId;
     }
