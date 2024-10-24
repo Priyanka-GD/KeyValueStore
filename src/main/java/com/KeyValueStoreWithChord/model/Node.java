@@ -1,53 +1,54 @@
 package com.KeyValueStoreWithChord.model;
 
+
 import java.util.HashMap;
+import java.util.Map;
 
 public class Node {
     private String nodeId;
-    private int rangeStart;
-    private int rangeEnd;
-    private HashMap<String, String> keyValueStore;
+    private int startRange;
+    private int endRange;
+    private Map<String, User> userMap = new HashMap<>();
 
-    public Node (String nodeId, int rangeStart, int rangeEnd) {
+    public Node (String nodeId, int startRange, int endRange) {
         this.nodeId = nodeId;
-        this.rangeStart = rangeStart;
-        this.rangeEnd = rangeEnd;
-        this.keyValueStore = new HashMap<>();
-    }
-
-    public void setRangeEnd (int rangeEnd) {
-        this.rangeEnd = rangeEnd;
-    }
-
-    public void setRangeStart (int rangeStart) {
-        this.rangeStart = rangeStart;
+        this.startRange = startRange;
+        this.endRange = endRange;
     }
 
     public String getNodeId () {
         return nodeId;
     }
 
-    public int getRangeStart () {
-        return rangeStart;
+    public void setNodeId (String nodeId) {
+        this.nodeId = nodeId;
     }
 
-    public int getRangeEnd () {
-        return rangeEnd;
+    public int getStartRange () {
+        return startRange;
     }
 
-    public HashMap<String, String> getKeyValueStore () {
-        return keyValueStore;
+    public void setStartRange (int startRange) {
+        this.startRange = startRange;
     }
 
-    public void putKeyValue (String key, String value) {
-        keyValueStore.put(key, value);
+    public int getEndRange () {
+        return endRange;
     }
 
-    public String getValue (String key) {
-        return keyValueStore.get(key);
+    public void setEndRange (int endRange) {
+        this.endRange = endRange;
     }
 
-    public boolean isInRange (int hash) {
-        return hash >= rangeStart && hash <= rangeEnd;
+    public Map<String, User> getUserMap () {
+        return userMap;
+    }
+
+    public void addUser (String key, User user) {
+        this.userMap.put(key, user);
+    }
+
+    public void removeUser (String key) {
+        this.userMap.remove(key);
     }
 }
