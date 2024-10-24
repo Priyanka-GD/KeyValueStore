@@ -7,35 +7,42 @@ public class User {
     private String address;
     private String email;
 
-    public String getUserId () {
+    public User (String userId, String name, String address, String email) {
+        this.userId = userId;
+        this.name = name;
+        this.address = address;
+        this.email = email;
+    }
+
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId (String userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
-    public String getName () {
+    public String getName() {
         return name;
     }
 
-    public void setName (String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public String getAddress () {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress (String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
-    public String getEmail () {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail (String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 }
