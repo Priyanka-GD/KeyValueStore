@@ -1,0 +1,27 @@
+<form (ngSubmit)="onSubmit()" #userForm="ngForm" class="user-form">
+  <div class="form-group">
+    <label for="userId">User ID:</label>
+    <input type="text" id="userId" [(ngModel)]="user.userId" name="userId" required />
+  </div>
+
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="user.name" name="name" required />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" [(ngModel)]="user.email" name="email" required />
+  </div>
+
+  <div class="form-group">
+    <label for="address">Address:</label>
+    <input type="text" id="address" [(ngModel)]="user.address" name="address" required />
+  </div>
+
+  <button type="submit" [disabled]="userForm.invalid" class="submit-button">Add User</button>
+
+  <div *ngIf="responseMessage" class="response-message">
+    <p>{{ responseMessage }}</p>
+  </div>
+</form>

@@ -1,0 +1,21 @@
+<h2>Add Node</h2>
+<form (ngSubmit)="onSubmit()" class="node-form">
+  <div class="form-group">
+    <label for="nodeId">Node ID:</label>
+    <input type="text" id="nodeId" [(ngModel)]="nodeId" name="nodeId" required />
+  </div>
+
+  <div class="form-group">
+    <label for="startRange">Start Range:</label>
+    <input type="number" id="startRange" [(ngModel)]="startRange" name="startRange" required />
+  </div>
+
+  <div class="form-group">
+    <label for="endRange">End Range:</label>
+    <input type="number" id="endRange" [(ngModel)]="endRange" name="endRange" required />
+  </div>
+
+  <button type="submit" class="submit-button">Add Node</button>
+
+  <p class="response-message">{{ responseMessage }}</p>
+</form>

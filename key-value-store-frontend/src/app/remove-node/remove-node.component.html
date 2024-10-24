@@ -1,0 +1,11 @@
+<h2>Remove Node</h2>
+<form (ngSubmit)="onSubmit()" class="remove-node-form">
+  <div class="form-group">
+    <label for="nodeId">Node ID:</label>
+    <input type="text" id="nodeId" [(ngModel)]="nodeId" name="nodeId" required />
+  </div>
+
+  <button type="submit" class="submit-button">Remove Node</button>
+
+  <p class="response-message">{{ responseMessage }}</p>
+</form>

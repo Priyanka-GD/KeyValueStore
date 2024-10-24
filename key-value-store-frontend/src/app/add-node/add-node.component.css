@@ -1,0 +1,41 @@
+.node-form {
+  max-width: 400px; /* Set a max-width for the form */
+  margin: 20px auto; /* Center the form horizontally */
+  padding: 20px; /* Add some padding */
+  border: 1px solid #ccc; /* Light border around the form */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #f9f9f9; /* Light background color */
+}
+
+.form-group {
+  margin-bottom: 15px; /* Space between form groups */
+}
+
+label {
+  display: block; /* Ensure labels are block elements */
+  margin-bottom: 5px; /* Space between label and input */
+  font-weight: bold; /* Make labels bold */
+}
+
+input {
+  width: 100%; /* Full width inputs */
+  padding: 8px; /* Padding inside inputs */
+  border: 1px solid #ccc; /* Border for inputs */
+  border-radius: 4px; /* Rounded corners for inputs */
+}
+
+.submit-button {
+  padding: 10px 15px; /* Padding for the submit button */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners for button */
+  background-color: #007bff; /* Primary button color */
+  color: white; /* Text color */
+  cursor: pointer; /* Change cursor on hover */
+  font-size: 16px; /* Font size */
+}
+
+.response-message {
+  margin-top: 15px; /* Space above response message */
+  font-weight: bold; /* Make the response message bold */
+  color: #ff0000; /* Optional: color for error messages */
+}

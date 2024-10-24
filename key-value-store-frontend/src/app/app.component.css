@@ -1,0 +1,37 @@
+/* app.component.css */
+
+header {
+  text-align: center; /* Center align the header */
+  margin: 20px 0; /* Space around the header */
+}
+
+h1 {
+  font-size: 2.5rem; /* Larger font size for the title */
+  color: #333; /* Dark color for the title */
+}
+
+nav {
+  background-color: #0099ff; /* Blue background for the navigation */
+  padding: 10px 0; /* Padding for the navigation */
+}
+
+.nav-list {
+  list-style-type: none; /* Remove bullets from the list */
+  padding: 0; /* Remove default padding */
+}
+
+.nav-item {
+  display: inline; /* Display items inline */
+  margin: 0 15px; /* Space between items */
+}
+
+.nav-item a {
+  color: white; /* White text for links */
+  text-decoration: none; /* Remove underline from links */
+  font-weight: bold; /* Make links bold */
+}
+
+.nav-item a:hover {
+  text-decoration: underline; /* Underline on hover */
+  color: #ffe600; /* Change color on hover */
+}
