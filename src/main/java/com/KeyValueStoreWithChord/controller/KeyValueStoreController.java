@@ -20,10 +20,10 @@ public class KeyValueStoreController {
 
     @PostMapping("/addUser")
     public ResponseEntity<Map<String, String>> addUser (@RequestBody User user) {
-        // Your logic to add the user here
-        Map<String, String> response = new HashMap<>();
-        response.put("message", "User added to Node4"); // Update this message as needed
-        return ResponseEntity.ok(response); // Return the response as a JSON object
+        String response = keyValueStoreService.addUser(user);
+        Map<String, String> sendResponse = new HashMap<>();
+        sendResponse.put("message", response); // Update this message as needed
+        return ResponseEntity.ok(sendResponse); // Return the response as a JSON object
     }
 
 
